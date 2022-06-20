@@ -1,9 +1,9 @@
-<template>
+﻿<template>
   <v-container>
     <v-row class="text-center">
       <v-col cols="12">
         <v-img
-          :src="require('../assets/img/stefa2.jpg')"
+          :src="require('../../assets/img/stefa2.jpg')"
           class="my-3"
           contain
           height="200"
@@ -24,10 +24,20 @@
 
 <script lang="ts">
 import Vue from "vue";
+import Component from "vue-class-component";
 
-export default Vue.extend({
-  name: "HelloWorld",
+@Component
+export default class Main extends Vue {
+  constructor() {
+    super();
+  }
 
-  data: () => ({}),
-});
+  registration() {
+    this.$router.push("registration");
+  }
+
+  toProducts() {
+    this.$router.push("products");
+  }
+}
 </script>

@@ -1,6 +1,6 @@
-<template>
+﻿<template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1>This is commentItem</h1>
   </div>
 </template>
 
@@ -9,13 +9,13 @@ import Vue from "vue";
 import Component from "vue-class-component";
 
 @Component
-export default class AboutView extends Vue {
+export default class CommentItem extends Vue {
   constructor() {
     super();
   }
 
-  registration() {
-    this.$router.push("registration");
+  edit() {
+    throw new Error("Comment edit process not implemented now");
   }
 }
 </script>

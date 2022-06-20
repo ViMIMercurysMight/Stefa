@@ -1,6 +1,6 @@
-<template>
+﻿<template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1>This is user Bucket Modal Window</h1>
   </div>
 </template>
 
@@ -9,13 +9,13 @@ import Vue from "vue";
 import Component from "vue-class-component";
 
 @Component
-export default class AboutView extends Vue {
+export default class Bucket extends Vue {
   constructor() {
     super();
   }
 
-  registration() {
-    this.$router.push("registration");
+  toOrder() {
+    this.$router.push("order");
   }
 }
 </script>

@@ -1,6 +1,6 @@
-<template>
+﻿<template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1>This is user Profile Page</h1>
   </div>
 </template>
 
@@ -9,7 +9,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 
 @Component
-export default class AboutView extends Vue {
+export default class ProfileDetail extends Vue {
   constructor() {
     super();
   }
