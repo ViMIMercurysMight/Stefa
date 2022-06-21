@@ -1,16 +1,17 @@
 ﻿<template>
-  <v-app-bar app color="primary" dark>
-    <div class="d-flex align-right">
+  <v-app-bar elevation="0" app color="primary" dark>
+    <v-app-bar-title class="d-flex align-right">
       <router-link to="/">
-        <span class="secondary--text stefa-header-text">Stefa</span>
+        <span class="accent--text stefa-header-text">Stefa</span>
       </router-link>
-    </div>
-    <v-spacer></v-spacer>
-    <router-link to="/products" class="accent--text">Products</router-link>
-    <router-link to="/" class="accent--text">Main</router-link>
-    <router-link to="/profile" class="accent--text">Profile</router-link>
-    <router-link to="/login" class="accent--text">LogIn</router-link>
-    <router-link to="/about" class="accent--text">About</router-link>
+    </v-app-bar-title>
+    <v-row class="nav-container mx-auto">
+      <v-col v-for="(route, index) in navigation" :key="index">
+        <router-link class="secondary--text nav-item" :to="route.path">{{
+          route.text
+        }}</router-link>
+      </v-col>
+    </v-row>
   </v-app-bar>
 </template>
 
@@ -20,6 +21,14 @@ import Component from "vue-class-component";
 
 @Component
 export default class Header extends Vue {
+  navigation: any = [
+    { path: "/products", text: "Products" },
+    { path: "/", text: "Main" },
+    { path: "/profile", text: "Profile" },
+    { path: "/login", text: "Login" },
+    { path: "/about", text: "About" },
+  ];
+
   constructor() {
     super();
   }
@@ -28,6 +37,16 @@ export default class Header extends Vue {
 <style>
 .stefa-header-text {
   font-family: "Estonia", cursive;
-  font-size: 64px;
+  font-size: 4em;
+}
+
+.nav-item {
+  font-family: "Estonia", cursive;
+  font-size: 3em;
+  text-decoration: none;
+}
+
+.nav-container {
+  max-width: 75vh;
 }
 </style>
